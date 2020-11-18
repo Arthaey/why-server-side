@@ -3,7 +3,7 @@
 Among other reasons, because passwords in client-side code are visible to anyone
 who wants to look!
 
-# Follow the steps below to "play along at home":
+# Follow the steps below to "play along at home"
 
 1. clone this repo
 
