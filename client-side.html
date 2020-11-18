@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <script type='text/javascript'>
+      // OH NOES, IT WOULD BE REALLY BAD IF SOMEONE COULD SEE THIS!
+      const mySecretPassword = 'SUPER SECRET PASSWORD, API KEY, ETC';
+
+      function fetchData(password) {
+        const data = {
+          foo: 'bar',
+          msg: 'password is ' + (mySecretPassword === null ? 'null' : 'not null')
+        };
+
+        return data;
+      }
+
+      function run() {
+        const data = fetchData(mySecretPassword);
+
+        const dataDisplay = document.querySelector('#data');
+        dataDisplay.innerText = JSON.stringify(data, null, 2);
+
+        const secret = document.querySelector('#secret');
+        const script = document.querySelector('script');
+        secret.innerText = script.innerText;
+      };
+    </script>
+
+    <link href='styles.css' rel='stylesheet' />
+  </head>
+
+  <body>
+    <h2>Click the button to get some data...</h2>
+    <button onclick='run()'>fetchData(password)</button>
+
+    <h2>Data shows up here:</h2>
+    <pre id='data'></pre>
+
+    <h2>But users can also see the source code! 💩</h2>
+    <pre id='secret'></pre>
+  </body>
+</html>

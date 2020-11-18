@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <script type='text/javascript'>
+      // HUZZAH! NO PASSWORDS HERE!
+
+      async function fetchData() {
+        const response = await fetch('http://localhost:3000/data');
+        return response.json();
+      }
+
+      async function run() {
+        const data = await fetchData();
+
+        const dataDisplay = document.querySelector('#data');
+        dataDisplay.innerText = JSON.stringify(data, null, 2);
+
+        const secret = document.querySelector('#secret');
+        const script = document.querySelector('script');
+        secret.innerText = script.innerText;
+      }
+    </script>
+
+    <link href='styles.css' rel='stylesheet' />
+  </head>
+
+  <body>
+    <h2>Click the button to get some data...</h2>
+    <button onclick='run()'>fetchData()</button>
+
+    <h2>Data shows up here:</h2>
+    <pre id='data'></pre>
+
+    <h2>And there's no way to see the password! 🎉</h2>
+    <pre id='secret'></pre>
+  </body>
+</html>

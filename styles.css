@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+button {
+  width: max-content;
+
+  background-color: yellow;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: monospace;
+
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+pre {
+  flex-grow: 1;
+
+  background-color: #efefef;
+  border: 1px inset #ccc;
+  font-family: monospace;
+  padding: 1rem;
+}
